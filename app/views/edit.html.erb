@@ -1,6 +1,11 @@
+edit.html.erb
+<h1>Edit Picture</h1>
 
-<h1>Add a picture</h1>
-<%= link_to "Back to Pictures", pictures_url %><%= form_for @picture do |f| %>
+<p>
+  <%= link_to "Back", @picture %>
+</p>
+
+<%= form_for @picture do |f| %>
   <p>
     <%= f.label "artist" %><br>
     <%= f.text_field "artist" %>
@@ -14,6 +19,6 @@
     <%= f.text_field "url" %>
   </p>
   <p>
-    <%= f.submit "Save" %> 
+    <%= submit_tag "Save" %>
   </p>
 <% end %>
