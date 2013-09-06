@@ -1,7 +1,12 @@
-<h1> Pictures ( <%= @pictures.length %> ) </h1>
+
 <%= link_to "New Picture", "/pictures/new" %>
 
-<% @pictures.each do |picture| %>
-  <p><%= picture[:title] %>, <%= picture[:artist] %></p>
-  <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
-<% end %>
+<div id="posts">
+	<h1> Pictures ( <%= @pictures.length %> ) </h1>
+	<% @pictures.each do |picture| %>
+		<div class="single_post">
+			<p><%= picture[:title] %>, <%= picture[:artist]%></p>
+			<%= link_to image_tag(picture.url), picture %>
+		</div>
+	<% end %>
+ </div>
